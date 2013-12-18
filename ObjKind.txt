@@ -1,0 +1,14 @@
+LineUnit              0
+RectUnit              1
+RoundRectUnit         2
+EllipseUnit           3
+ArcUnit               4
+SectorUnit            5
+PenBrushUnit          6
+PolylineUnit          7
+TextUnit              8
+BmpUnit               9
+Combination           10
+PolygonUnit           11
+RgnUnit               12
+			

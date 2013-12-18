@@ -1,0 +1,187 @@
+# Microsoft Developer Studio Generated Dependency File, included by SCT Draw Activex.mak
+
+.\ArcUnit.cpp : \
+	".\ArcUnit.h"\
+	".\BaseUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\BaseUnit.cpp : \
+	".\BaseUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\BitmapUnit.cpp : \
+	".\BaseUnit.h"\
+	".\BitmapUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\Combination.cpp : \
+	".\ArcUnit.h"\
+	".\BaseUnit.h"\
+	".\BitmapUnit.h"\
+	".\Combination.h"\
+	".\EllipseUnit.h"\
+	".\LineUnit.h"\
+	".\PenBrushUnit.h"\
+	".\PolylineUnit.h"\
+	".\RectUnit.h"\
+	".\RoundRectUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\SectorUnit.h"\
+	".\TextUnit.h"\
+	
+
+.\EllipseUnit.cpp : \
+	".\BaseUnit.h"\
+	".\EllipseUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\EraseUnit.cpp : \
+	".\ArcUnit.h"\
+	".\BaseUnit.h"\
+	".\BitmapUnit.h"\
+	".\Combination.h"\
+	".\EllipseUnit.h"\
+	".\EraseUnit.h"\
+	".\LineUnit.h"\
+	".\PenBrushUnit.h"\
+	".\PolylineUnit.h"\
+	".\RectUnit.h"\
+	".\RoundRectUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\SectorUnit.h"\
+	".\TextUnit.h"\
+	
+
+.\LineUnit.cpp : \
+	".\BaseUnit.h"\
+	".\LineUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\PenBrushUnit.cpp : \
+	".\BaseUnit.h"\
+	".\PenBrushUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\PolylineUnit.cpp : \
+	".\BaseUnit.h"\
+	".\PolylineUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\RectUnit.cpp : \
+	".\BaseUnit.h"\
+	".\RectUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+.\RoundRectUnit.cpp : \
+	".\BaseUnit.h"\
+	".\RoundRectUnit.h"\
+	".\SCT Draw Activex.h"\
+	
+
+".\SCT Draw Activex.cpp" : \
+	".\SCT Draw Activex.h"\
+	
+
+".\SCT Draw Activex.rc" : \
+	".\cur00001.cur"\
+	".\cur00002.cur"\
+	".\cur00003.cur"\
+	".\cursor1.cur"\
+	".\Debug\SCT Draw Activex.tlb"\
+	".\Move.cur"\
+	".\Rotate.cur"\
+	".\SCTDrawActivexCtl.bmp"\
+	".\Stretch.cur"\
+	
+
+.\SCTDrawActivexCtl.cpp : \
+	".\ArcUnit.h"\
+	".\BaseUnit.h"\
+	".\BitmapUnit.h"\
+	".\Combination.h"\
+	".\EllipseUnit.h"\
+	".\EraseUnit.h"\
+	".\Library.h"\
+	".\LineUnit.h"\
+	".\PenBrushUnit.h"\
+	".\PolylineUnit.h"\
+	".\RectUnit.h"\
+	".\RoundRectUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\SCTDrawActivexCtl.h"\
+	".\SCTDrawActivexPpg.h"\
+	".\SectorUnit.h"\
+	".\StylesDlg.h"\
+	".\TextUnit.h"\
+	
+
+.\SCTDrawActivexPpg.cpp : \
+	".\SCT Draw Activex.h"\
+	".\SCTDrawActivexPpg.h"\
+	
+
+.\SectorUnit.cpp : \
+	".\BaseUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\SectorUnit.h"\
+	
+
+.\SplitUnit.cpp : \
+	".\BaseUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\SplitUnit.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	"e:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplus.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusbase.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusbitmap.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusbrush.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluscachedbitmap.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluscolor.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluscolormatrix.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusenums.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusflat.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusfont.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusfontcollection.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusfontfamily.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusgpstubs.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusgraphics.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusheaders.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusimageattributes.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusimagecodec.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusimaging.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusinit.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluslinecaps.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusmatrix.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusmem.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusmetafile.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusmetaheader.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluspath.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluspen.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdipluspixelformats.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusregion.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplusstringformat.h"\
+	"e:\program files\microsoft visual studio\vc98\include\gdiplustypes.h"\
+	
+
+.\StylesDlg.cpp : \
+	".\SCT Draw Activex.h"\
+	".\StylesDlg.h"\
+	
+
+.\TextUnit.cpp : \
+	".\BaseUnit.h"\
+	".\SCT Draw Activex.h"\
+	".\TextUnit.h"\
+	

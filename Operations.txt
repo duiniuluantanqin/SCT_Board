@@ -1,0 +1,21 @@
+View Mode            0
+Add Line             1
+Add Rectangle        2
+Add Rounded Rect     3
+Add Ellipse          4
+Add Arc              5
+Add Sector           6
+Add PenBrush         7
+Add Polyline         8
+Add Text             9             
+Add Image            10
+Edit/Select Mode     11
+SaveDataToFile       12
+ReadDataFromFile     13
+RgnEraser            14
+DotEraser            15
+ObjectEraser         16
+SprayBottle          17
+Add Polygon          18
+DragScreen           19
+RgnUnit              20

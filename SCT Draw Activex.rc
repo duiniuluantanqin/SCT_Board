@@ -1,0 +1,316 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""SCT Draw Activex.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Î¢ÈíÖÐ¹ú"
+            VALUE "FileDescription", "SCT Draw Activex ActiveX Control Module"
+            VALUE "FileVersion", "1.0.0.2"
+            VALUE "InternalName", "SCT Draw Activex"
+            VALUE "LegalCopyright", "Copyright (C) 2008"
+            VALUE "OriginalFilename", "SCT Draw Activex.OCX"
+            VALUE "ProductName", "SCT Draw Activex ActiveX Control Module"
+            VALUE "ProductVersion", "1.0.0.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SCTDRAWACTIVEX      BITMAP                  "SCTDrawActivexCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_SCTDRAWACTIVEX DIALOGEX 0, 0, 257, 154
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,25,230,36
+    LTEXT           "Operations",IDC_STATIC,14,41,41,8
+    COMBOBOX        IDC_Operations,58,40,101,76,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_Styles DIALOG 0, 0, 257, 154
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Line Styles",IDC_STATIC,2,6,111,32
+    COMBOBOX        IDC_LineStyles,6,18,100,76,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_LineWidth,8,63,98,14,ES_AUTOHSCROLL
+    GROUPBOX        "Fill Styles",IDC_STATIC,3,100,109,36
+    COMBOBOX        IDC_FillStyles,7,114,98,98,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_FilePath,133,27,98,15,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "SaveFilePath",IDC_STATIC,130,7,119,45
+    GROUPBOX        "TemBmpSavePath",IDC_STATIC,129,59,119,45
+    EDITTEXT        IDC_TemBmpPath,134,83,97,16,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON1,232,27,16,15
+    PUSHBUTTON      "...",IDC_BUTTON2,232,83,14,15
+    GROUPBOX        "BackgroundImage",IDC_STATIC,130,111,117,39
+    EDITTEXT        IDC_bkImage,133,125,98,17,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON3,232,125,14,16
+    GROUPBOX        "Line Width",IDC_STATIC,3,51,111,32
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_SCTDRAWACTIVEX DLGINIT
+BEGIN
+    IDC_Operations, 0x403, 10, 0
+0x6956, 0x7765, 0x4d20, 0x646f, 0x0065, 
+    IDC_Operations, 0x403, 9, 0
+0x6441, 0x2064, 0x694c, 0x656e, "\000" 
+    IDC_Operations, 0x403, 14, 0
+0x6441, 0x2064, 0x6552, 0x7463, 0x6e61, 0x6c67, 0x0065, 
+    IDC_Operations, 0x403, 17, 0
+0x6441, 0x2064, 0x6f52, 0x6e75, 0x6564, 0x2064, 0x6552, 0x7463, "\000" 
+    IDC_Operations, 0x403, 12, 0
+0x6441, 0x2064, 0x6c45, 0x696c, 0x7370, 0x0065, 
+    IDC_Operations, 0x403, 8, 0
+0x6441, 0x2064, 0x7241, 0x0063, 
+    IDC_Operations, 0x403, 11, 0
+0x6441, 0x2064, 0x6553, 0x7463, 0x726f, "\000" 
+    IDC_Operations, 0x403, 13, 0
+0x6441, 0x2064, 0x6550, 0x426e, 0x7572, 0x6873, "\000" 
+    IDC_Operations, 0x403, 13, 0
+0x6441, 0x2064, 0x6f50, 0x796c, 0x696c, 0x656e, "\000" 
+    IDC_Operations, 0x403, 9, 0
+0x6441, 0x2064, 0x6554, 0x7478, "\000" 
+    IDC_Operations, 0x403, 10, 0
+0x6441, 0x2064, 0x6d49, 0x6761, 0x0065, 
+    IDC_Operations, 0x403, 17, 0
+0x6445, 0x7469, 0x532f, 0x6c65, 0x6365, 0x2074, 0x6f4d, 0x6564, "\000" 
+    IDC_Operations, 0x403, 15, 0
+0x6153, 0x6576, 0x6144, 0x6174, 0x6f54, 0x6946, 0x656c, "\000" 
+    IDC_Operations, 0x403, 17, 0
+0x6552, 0x6461, 0x6144, 0x6174, 0x7246, 0x6d6f, 0x6946, 0x656c, "\000" 
+    IDC_Operations, 0x403, 10, 0
+0x6752, 0x456e, 0x6172, 0x6573, 0x0072, 
+    IDC_Operations, 0x403, 10, 0
+0x6f44, 0x4574, 0x6172, 0x6573, 0x0072, 
+    IDC_Operations, 0x403, 13, 0
+0x624f, 0x656a, 0x7463, 0x7245, 0x7361, 0x7265, "\000" 
+    IDC_Operations, 0x403, 12, 0
+0x7053, 0x6172, 0x4279, 0x746f, 0x6c74, 0x0065, 
+    IDC_Operations, 0x403, 12, 0
+0x6441, 0x2064, 0x6f50, 0x796c, 0x6f67, 0x006e, 
+    IDC_Operations, 0x403, 11, 0
+0x7244, 0x6761, 0x6353, 0x6572, 0x6e65, "\000" 
+    0
+END
+
+IDD_PROPPAGE_Styles DLGINIT
+BEGIN
+    IDC_LineStyles, 0x403, 6, 0
+0x6f53, 0x696c, 0x0064, 
+    IDC_LineStyles, 0x403, 5, 0
+0x6144, 0x6873, "\000" 
+    IDC_LineStyles, 0x403, 4, 0
+0x6f44, 0x0074, 
+    IDC_LineStyles, 0x403, 8, 0
+0x6144, 0x6873, 0x6f44, 0x0074, 
+    IDC_LineStyles, 0x403, 11, 0
+0x6144, 0x6873, 0x6f44, 0x4474, 0x746f, "\000" 
+    IDC_FillStyles, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_FillStyles, 0x403, 6, 0
+0x6f53, 0x696c, 0x0064, 
+    IDC_FillStyles, 0x403, 16, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, 0x4c20, 0x6e69, 0x0065, 
+    IDC_FillStyles, 0x403, 14, 0
+0x6556, 0x7472, 0x6369, 0x6c61, 0x4c20, 0x6e69, 0x0065, 
+    IDC_FillStyles, 0x403, 16, 0
+0x6f46, 0x7772, 0x7261, 0x4464, 0x6169, 0x6f67, 0x616e, 0x006c, 
+    IDC_FillStyles, 0x403, 18, 0
+0x6142, 0x6b63, 0x6177, 0x6472, 0x6944, 0x6761, 0x6e6f, 0x6c61, 0x0020, 
+
+    IDC_FillStyles, 0x403, 11, 0
+0x7243, 0x736f, 0x2073, 0x694c, 0x656e, "\000" 
+    IDC_FillStyles, 0x403, 14, 0
+0x6944, 0x6761, 0x6e6f, 0x6c61, 0x7243, 0x736f, 0x0073, 
+    IDC_FillStyles, 0x403, 14, 0
+0x694c, 0x6867, 0x5674, 0x7265, 0x6974, 0x6163, 0x006c, 
+    IDC_FillStyles, 0x403, 15, 0
+0x694c, 0x6867, 0x4874, 0x726f, 0x7a69, 0x6e6f, 0x6174, "\000" 
+    IDC_FillStyles, 0x403, 17, 0
+0x6144, 0x6873, 0x6465, 0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, "\000" 
+    IDC_FillStyles, 0x403, 5, 0
+0x6157, 0x6576, "\000" 
+    IDC_FillStyles, 0x403, 14, 0
+0x6944, 0x6761, 0x6e6f, 0x6c61, 0x7242, 0x6369, 0x006b, 
+    IDC_FillStyles, 0x403, 16, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, 0x7242, 0x6369, 0x006b, 
+    IDC_FillStyles, 0x403, 6, 0
+0x6557, 0x7661, 0x0065, 
+    IDC_FillStyles, 0x403, 13, 0
+0x6f53, 0x696c, 0x4464, 0x6169, 0x6f6d, 0x646e, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_Edit                CURSOR                  "Stretch.cur"
+IDC_Stretch             CURSOR                  "cursor1.cur"
+IDC_Rotate              CURSOR                  "Rotate.cur"
+IDC_Move                CURSOR                  "Move.cur"
+IDC_DownUp              CURSOR                  "cur00001.cur"
+IDC_LeftRight           CURSOR                  "cur00002.cur"
+IDC_Eraser              CURSOR                  "cur00003.cur"
+IDC_Menu                CURSOR                  "Menu.cur"
+IDC_HandCur             CURSOR                  "Hand.cur"
+IDC_PenCur              CURSOR                  "Pen.cur"
+IDC_PlayCur             CURSOR                  "Play.cur"
+IDC_SprayBottle         CURSOR                  "SprayBottle.cur"
+IDC_Change              CURSOR                  "Change.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST             "SCT Draw Activex.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_Menu                PNG                     "..\\Menu.png"
+IDB_Play                PNG                     "..\\Play.png"
+IDB_Rotate              PNG                     "..\\Rotate.png"
+IDB_Stretch             PNG                     "..\\Stretch.png"
+IDB_ChangePoint         PNG                     "ChangePoint.png"
+IDB_Head                PNG                     "head.png"
+IDB_Left                PNG                     "left.png"
+IDB_Right               PNG                     "right.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_PROPPAGE_SCTDRAWACTIVEX, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_SCTDRAWACTIVEX      "SCTDrawActivex Control"
+    IDS_SCTDRAWACTIVEX_PPG  "SCTDrawActivex Property Page"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SCTDRAWACTIVEX_PPG_CAPTION "General"
+    IDS_STYLES_PPG          "SCTDrawActivex Styles Page"
+    IDS_STYLES_PPG_CAPTION  "Styles"
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "SCT Draw Activex.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

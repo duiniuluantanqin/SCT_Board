@@ -1,0 +1,26 @@
+HKCR
+{
+	Picture.Picture.1 = s 'Picture Class'
+	{
+		CLSID = s '{248D89DF-0A6F-4550-A3A5-1D0DA3864152}'
+	}
+	Picture.Picture = s 'Picture Class'
+	{
+		CLSID = s '{248D89DF-0A6F-4550-A3A5-1D0DA3864152}'
+		CurVer = s 'Picture.Picture.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {248D89DF-0A6F-4550-A3A5-1D0DA3864152} = s 'Picture Class'
+		{
+			ProgID = s 'Picture.Picture.1'
+			VersionIndependentProgID = s 'Picture.Picture'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{339843A8-9029-49FA-9843-2430D6A57E14}'
+		}
+	}
+}

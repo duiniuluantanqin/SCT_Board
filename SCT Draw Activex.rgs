@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{A311F380-D6C6-461A-8E0A-D230309E5083} = s 'SCT Draw Activex'
+		'SCT Draw Activex.EXE'
+		{
+			val AppID = s {A311F380-D6C6-461A-8E0A-D230309E5083}
+		}
+	}
+}

@@ -1,0 +1,200 @@
+// SCT Draw Activex.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (SCT Draw Activex.tlb) that will become a resource in
+// SCT Draw Activex.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(339843A8-9029-49FA-9843-2430D6A57E14), version(1.0),
+  helpfile("SCT Draw Activex.hlp"),
+  helpstring("SCT Draw Activex ActiveX Control module"),
+  control ]
+library SCTDRAWACTIVEXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CSCTDrawActivexCtrl
+
+	[ uuid(3452693D-9A3D-4B95-BBBF-DCE37CCD00E8),
+	  helpstring("Dispatch interface for SCTDrawActivex Control"), hidden ]
+	dispinterface _DSCTDrawActivex
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSCTDrawActivexCtrl)
+			[id(1)] short Operations;
+			[id(2)] short PenWidth;
+			[id(3)] OLE_COLOR PenColor;
+			[id(4)] OLE_COLOR FillColor;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(5)] OLE_COLOR FontColor;
+			[id(6)] BSTR FilePath;
+			[id(7)] BSTR temBmpPath;
+			[id(8)] OLE_COLOR bkColor;
+			[id(9)] short LineStyle;
+			[id(10)] short FillStyle;
+			[id(11)] OLE_COLOR foreColor;
+			[id(12)] BSTR bkBmp;
+			[id(13)] BSTR ReservedProperty0;
+			[id(14)] BSTR ReservedProperty1;
+			[id(15)] BSTR ReservedProperty2;
+			[id(16)] BSTR ReservedProperty3;
+			[id(17)] BSTR ReservedProperty4;
+			[id(119) ] SHORT gesture;
+
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSCTDrawActivexCtrl)
+			[id(18)] BSTR SetOperationEx(BSTR Operations);
+			[id(19)] BSTR SetLineStyleEx(BSTR LineStyle);
+			[id(20)] BSTR SetFillStyleEx(BSTR FillStyle);
+			[id(21)] void CreateNewPage();
+			[id(22)] boolean ModifyLineWidth(short nWidth);
+			[id(23)] boolean ModifyLineColor(OLE_COLOR nColor);
+			[id(24)] boolean ModifyFontColor(OLE_COLOR nColor);
+			[id(25)] boolean AddPicture(OLE_HANDLE hBitmap, short Left, short Top, short Width, short Height);
+			[id(26)] boolean AddPictureFromFile(BSTR FilePath, short Left, short Top, short Width, short Height);
+			[id(27)] boolean AddPictureFromHandle(OLE_HANDLE hBitmap);
+			[id(28)] short ShowPage(short PageID);
+			[id(29)] OLE_HANDLE GetPageBmp();
+			[id(30)] boolean SetbkImageFromHandle(OLE_HANDLE hBitmap);
+			[id(31)] boolean SetCombination();
+			[id(32)] boolean SetDisjunction();
+			[id(33)] boolean Undo();
+			[id(34)] boolean Redo();
+			[id(35)] boolean SelectAllObj();
+			[id(36)] boolean ErasedRegion(short left, short top, short right, short bottom);
+			[id(37)] boolean ZoomIn(float mul);
+			[id(38)] boolean DeleteSelObj();
+			[id(39)] boolean CopySelObj();
+			[id(40)] boolean PasteObj();
+			[id(41)] boolean LockSelObj(boolean IsLocked);
+			[id(42)] boolean DeletePage(short PageIndex);
+			[id(43)] boolean GetSelObjIsLocked();
+			[id(44)] short GetSelObjStartPointX();
+			[id(45)] short GetSelObjStartPointY();
+			[id(46)] short GetSelObjEndPointX();
+			[id(47)] short GetSelObjEndPointY();
+			[id(48)] short GetSelObjCenterPointX();
+			[id(49)] short GetSelObjCenterPointY();
+			[id(50)] double GetSelObjRotateAngle();
+			[id(51)] short GetSelObjLineStyle();
+			[id(52)] short GetSelObjFillStyle();
+			[id(53)] short GetSelObjPenWidth();
+			[id(54)] long GetSelObjFillColor();
+			[id(55)] long GetSelObjFontColor();
+			[id(56)] long GetSelObjForeColor();
+			[id(57)] short GetPageNum();
+			[id(58)] boolean CopyPage(short PageIndex);
+			[id(59)] boolean PastPage(short PageIndex);
+			[id(60)] boolean EraseAll();
+			[id(61)] long SaveDataToFile(BSTR FilePath);
+			[id(62)] long ReadDataFromFile(BSTR FilePath);
+			[id(63)] boolean ModifyFillStyle(short nStyle);
+			[id(64)] boolean ModifyLineStyle(short nStyle);
+			[id(65)] boolean MoveUp();
+			[id(66)] boolean MoveTop();
+			[id(67)] boolean MoveDown();
+			[id(68)] boolean MoveBottom();
+			[id(69)] boolean ModifyFillColor(OLE_COLOR nColor);
+			[id(70)] boolean ModifyForeColor(OLE_COLOR nForeColor);
+			[id(71)] boolean DrawPolygon(VARIANT* ptArray, short nSize);
+			[id(72)] boolean DrawObj(short ObjType, short Left, short Top, short Right, short Bottom, float Angle);
+			[id(73)] boolean SetSprayBottle(short FillStyle, OLE_COLOR FillColor, OLE_COLOR ForeColor);
+			[id(74)] short GetObjNum();
+			[id(75)] short GetSelObjType();
+			[id(76)] BSTR ReadReservedProperty(short PropertyIndex, short ObjIndex);
+			[id(77)] boolean SetReservedProperty(short PropertyIndex, short ObjIndex, BSTR Property);
+			[id(78)] short GetSelObjIndex();
+			[id(79)] boolean SelectObjs(short* Objs, short ObjsNum);
+			[id(80)] boolean AddSelectObjs(short* Objs, short ObjsNum);
+			[id(81)] boolean UnSelectObjs(short* Objs, short ObjsNum);
+			[id(82)] long GetSelObjPenColor();
+			[id(83)] boolean ReplayPage(short ObjIndex);
+			[id(84)] boolean ModifySelObjFont(OLE_HANDLE hFont);
+			[id(85)] boolean InitializeFont(OLE_HANDLE hFont);
+			[id(86)] OLE_HANDLE GetSelObjFont();
+			[id(87)] boolean AddRgnObj(OLE_HANDLE hRgn);
+			[id(88)] OLE_HANDLE GetSelObjRegion(short SelObjIndex);
+			[id(89)] boolean GetSelObjIsErased(short ObjIndex);
+			[id(90)] boolean GetObjRect(short* left, short* top, short* right, short* bottom, short ObjIndex);
+			//}}AFX_ODL_METHOD
+			[id(91), helpstring("method InsertPage")] VARIANT_BOOL InsertPage(SHORT PageIndex);
+			[id(92), helpstring("method ChangePageIndex")] VARIANT_BOOL ChangePageIndex(SHORT FromPageIndex, SHORT ToPageIndex);
+			[id(93), helpstring("method StartPlay")] VARIANT_BOOL StartPlay(SHORT PageIndex);
+			[id(94), helpstring("method StopPlay")] VARIANT_BOOL StopPlay(void);
+			[id(95), helpstring("method GetPageThumbnail")] OLE_HANDLE GetPageThumbnail(SHORT PageIndex);
+			[id(96), helpstring("method RefreshAll")] void RefreshAll(void);
+			[id(97), helpstring("method SaveObjToImage")] OLE_HANDLE SaveObjToImage(void);
+			[id(98), helpstring("method SetAlphaProperty")] void SetAlphaProperty(USHORT Alpha);
+			[id(99), helpstring("method BeginChart")] void BeginChart(BSTR HeadLine, OLE_COLOR bkColor);
+			[id(100), helpstring("method AddChartData")] void AddChartData(BSTR Name, FLOAT Number, OLE_COLOR color);
+			[id(101), helpstring("method FinishChart")] void FinishChart(SHORT Type);
+			[id(102), helpstring("method GetChartDataNum")] SHORT GetChartDataNum(void);
+			[id(103), helpstring("method ChangeSelChartData")] void ChangeSelChartData(void);
+			[id(104), helpstring("method GetChartItemName")] BSTR GetChartItemName(SHORT Index);
+			[id(105), helpstring("method GetChartItemNumber")] FLOAT GetChartItemNumber(USHORT Index);
+			[id(106), helpstring("method GetChartItemColor")] OLE_COLOR GetChartItemColor(SHORT Index);
+			[id(107), helpstring("method GetChartItemHeadLine")] BSTR GetChartItemHeadLine(void);
+			[id(108), helpstring("method GetChartItembkColor")] OLE_COLOR GetChartItembkColor(void);
+			[id(109), helpstring("method SaveAsOtherTypes")] SHORT SaveAsOtherTypes(SHORT PageID, BSTR FilePath);
+			[id(110)] BSTR GetSelObjText(void);
+			[id(111)] void SetPolylineStyle(USHORT nStyle);
+			[id(112)] void SetPolylineColors(OLE_COLOR col1, OLE_COLOR col2, OLE_COLOR col3, OLE_COLOR col4);
+			[id(113)] void AddPolylineImage(BSTR ImagePath);
+			[id(114)] void SetLineKind(USHORT nStyle);
+			[id(115)] void SetMultiTouch(VARIANT_BOOL flag);
+			[id(116)] VARIANT_BOOL GetMultiTouchMode(void);
+			[id(117)] VARIANT_BOOL InsertDigiMemoObjs(BSTR FilePath);
+			[id(118)] VARIANT_BOOL CreateNewFile(void);
+};
+	//  Event dispatch interface for CSCTDrawActivexCtrl
+
+	[ uuid(C8760923-4DD6-493E-A4BA-420DC72455FE),
+	  helpstring("Event interface for SCTDrawActivex Control") ]
+	dispinterface _DSCTDrawActivexEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CSCTDrawActivexCtrl)
+			[id(DISPID_CLICK)] void Click();
+			[id(DISPID_DBLCLICK)] void DblClick();
+			[id(DISPID_KEYDOWN)] void KeyDown(short* KeyCode, short Shift);
+			[id(DISPID_KEYPRESS)] void KeyPress(short* KeyAscii);
+			[id(DISPID_KEYUP)] void KeyUp(short* KeyCode, short Shift);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEMOVE)] void MouseMove(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(1)] void ClickMenuRegion();
+			[id(2)] void DoneReplayPage();
+			[id(3)] void ClickPlayRegion();
+			[id(4)] void PageChanged();
+			//}}AFX_ODL_EVENT
+			[id(5)] void JudgeSelectedImage(VARIANT_BOOL IsChart);
+	};
+
+	//  Class information for CSCTDrawActivexCtrl
+
+	[ uuid(315A11EA-2B5E-4EA2-9196-ADFF1A86BF58),
+	  helpstring("SCTDrawActivex Control"), control ]
+	coclass SCTDrawActivex
+	{
+		[default] dispinterface _DSCTDrawActivex;
+		[default, source] dispinterface _DSCTDrawActivexEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,132 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SCT Draw Activex - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /nologo /D "NDEBUG" /tlb "Release/SCT Draw Activex.tlb" /mktyplib203 /win32 "E:\SCT Draw Activex\SCT Draw Activex.odl""
+Creating command line "rc.exe /l 0x804 /fo"Release/SCT Draw Activex.res" /i "Release" /d "NDEBUG" /d "_AFXDLL" "E:\SCT Draw Activex\SCT Draw Activex.rc"" 
+Creating temporary file "C:\Users\Paul\AppData\Local\Temp\RSPE679.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\SCT Draw Activex\ArcUnit.cpp"
+"E:\SCT Draw Activex\BaseUnit.cpp"
+"E:\SCT Draw Activex\BitmapUnit.cpp"
+"E:\SCT Draw Activex\Combination.cpp"
+"E:\SCT Draw Activex\DisjointUnit.cpp"
+"E:\SCT Draw Activex\EllipseUnit.cpp"
+"E:\SCT Draw Activex\EraseUnit.cpp"
+"E:\SCT Draw Activex\LineUnit.cpp"
+"E:\SCT Draw Activex\PenBrushUnit.cpp"
+"E:\SCT Draw Activex\PolygonUnit.cpp"
+"E:\SCT Draw Activex\PolylineUnit.cpp"
+"E:\SCT Draw Activex\RectUnit.cpp"
+"E:\SCT Draw Activex\RgnObjUnit.cpp"
+"E:\SCT Draw Activex\RoundRectUnit.cpp"
+"E:\SCT Draw Activex\SCT Draw Activex.cpp"
+"E:\SCT Draw Activex\SCTDrawActivexCtl.cpp"
+"E:\SCT Draw Activex\SCTDrawActivexPpg.cpp"
+"E:\SCT Draw Activex\SectorUnit.cpp"
+"E:\SCT Draw Activex\SplitUnit.cpp"
+"E:\SCT Draw Activex\SprayBottleUnit.cpp"
+"E:\SCT Draw Activex\StylesDlg.cpp"
+"E:\SCT Draw Activex\TextUnit.cpp"
+]
+Creating command line "cl.exe @C:\Users\Paul\AppData\Local\Temp\RSPE679.tmp" 
+Creating temporary file "C:\Users\Paul\AppData\Local\Temp\RSPE68A.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/SCT Draw Activex.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\SCT Draw Activex\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Paul\AppData\Local\Temp\RSPE68A.tmp" 
+Creating temporary file "C:\Users\Paul\AppData\Local\Temp\RSPE68B.tmp" with contents
+[
+zlib.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/SCT Draw Activex.pdb" /machine:I386 /def:".\SCT Draw Activex.def" /out:"Release/SCT Draw Activex.ocx" /implib:"Release/SCT Draw Activex.lib" 
+".\Release\ArcUnit.obj"
+".\Release\BaseUnit.obj"
+".\Release\BitmapUnit.obj"
+".\Release\Combination.obj"
+".\Release\DisjointUnit.obj"
+".\Release\EllipseUnit.obj"
+".\Release\EraseUnit.obj"
+".\Release\LineUnit.obj"
+".\Release\PenBrushUnit.obj"
+".\Release\PolygonUnit.obj"
+".\Release\PolylineUnit.obj"
+".\Release\RectUnit.obj"
+".\Release\RgnObjUnit.obj"
+".\Release\RoundRectUnit.obj"
+".\Release\SCT Draw Activex.obj"
+".\Release\SCTDrawActivexCtl.obj"
+".\Release\SCTDrawActivexPpg.obj"
+".\Release\SectorUnit.obj"
+".\Release\SplitUnit.obj"
+".\Release\SprayBottleUnit.obj"
+".\Release\StdAfx.obj"
+".\Release\StylesDlg.obj"
+".\Release\TextUnit.obj"
+".\Release\SCT Draw Activex.res"
+]
+Creating command line "link.exe @C:\Users\Paul\AppData\Local\Temp\RSPE68B.tmp"
+Creating temporary file "C:\Users\Paul\AppData\Local\Temp\RSPE68C.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Release\SCT Draw Activex.ocx"
+echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+]
+Creating command line "C:\Users\Paul\AppData\Local\Temp\RSPE68C.bat"
+Creating Type Library...
+Processing E:\SCT Draw Activex\SCT Draw Activex.odl
+SCT Draw Activex.odl
+Processing E:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing E:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing E:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing E:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+E:\SCT Draw Activex\SCT Draw Activex.odl(76) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'IsLocked' of Procedure 'LockSelObj' ( Dispinterface '_DSCTDrawActivex' ) ]
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ArcUnit.cpp
+BaseUnit.cpp
+BitmapUnit.cpp
+Combination.cpp
+DisjointUnit.cpp
+EllipseUnit.cpp
+EraseUnit.cpp
+LineUnit.cpp
+PenBrushUnit.cpp
+PolygonUnit.cpp
+PolylineUnit.cpp
+RectUnit.cpp
+RgnObjUnit.cpp
+RoundRectUnit.cpp
+SCT Draw Activex.cpp
+SCTDrawActivexCtl.cpp
+SCTDrawActivexPpg.cpp
+SectorUnit.cpp
+SplitUnit.cpp
+SprayBottleUnit.cpp
+Generating Code...
+Compiling...
+StylesDlg.cpp
+TextUnit.cpp
+Generating Code...
+Linking...
+   Creating library Release/SCT Draw Activex.lib and object Release/SCT Draw Activex.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+SCT Draw Activex.ocx - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>
