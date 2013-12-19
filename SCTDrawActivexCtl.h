@@ -615,7 +615,7 @@ protected:
 private:
 	void ProcessInputEvent(const TOUCHINPUT* inData);
 	void ProcessChanges();
-	void DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData, BOOL* bFound);
+	void DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData);
 	void MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData);
 	void UpEvent(CCoreObject* coRef, const TOUCHINPUT* inData);
 

@@ -10084,7 +10084,6 @@ void CSCTDrawActivexCtrl::ProcessInputEvent(const TOUCHINPUT* inData)
 {
 	DWORD dwCursorID = inData->dwID;
 	DWORD dwEvent = inData->dwFlags;
-	BOOL bFoundObj = FALSE;	
 
 	BOOL success = TRUE;
 
@@ -10113,7 +10112,7 @@ void CSCTDrawActivexCtrl::ProcessInputEvent(const TOUCHINPUT* inData)
 	// Find the object and associate the cursor id with the object
 	if(dwEvent & TOUCHEVENTF_DOWN)
 	{
-		DownEvent(m_object, inData, &bFoundObj);
+		DownEvent(m_object, inData);
 	}
 	else if(dwEvent & TOUCHEVENTF_MOVE)
 	{
@@ -10125,7 +10124,7 @@ void CSCTDrawActivexCtrl::ProcessInputEvent(const TOUCHINPUT* inData)
 	}
 }
 
-void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData, BOOL* bFound)
+void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData)
 {
 	DWORD dwCursorID = inData->dwID;
 	DWORD dwPTime = inData->dwTime;
@@ -10145,10 +10144,6 @@ void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 		{
 			coRef->manipulationProc->CompleteManipulation();
 		}
-	}
-	else
-	{
-		*bFound = FALSE;
 	}
 }
 
@@ -10171,19 +10166,19 @@ void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	GetDataInfo.CenterPoint.x += dx;
 	GetDataInfo.CenterPoint.y += dy;
 
-// 	GetDataInfo.RotateAngle=GetDataInfo.RotateAngle+Angle;
-// 	GetDataInfo.RotateAngle=fmod(GetDataInfo.RotateAngle,360);
+	GetDataInfo.RotateAngle=GetDataInfo.RotateAngle+Angle;
+	GetDataInfo.RotateAngle=fmod(GetDataInfo.RotateAngle,360);
 	GetDataInfo.xScale *= Scale;
 	GetDataInfo.yScale *= Scale;
 
-// 	double len=sqrt(float(Rel_StartPoint.x*Rel_StartPoint.x)+float(Rel_StartPoint.y*Rel_StartPoint.y));
-// 	Angle=atan2(float(Rel_StartPoint.y),float(Rel_StartPoint.x))+GetDataInfo.RotateAngle/Rate;
-// 	GetDataInfo.StartPoint.x=GetDataInfo.CenterPoint.x+len*cos(Angle);
-// 	GetDataInfo.StartPoint.y=GetDataInfo.CenterPoint.y+len*sin(Angle);
-// 	len=sqrt(float(Rel_EndPoint.x*Rel_EndPoint.x)+float(Rel_EndPoint.y*Rel_EndPoint.y));
-// 	Angle=atan2(float(Rel_EndPoint.y),float(Rel_EndPoint.x))+GetDataInfo.RotateAngle/Rate;
-// 	GetDataInfo.EndPoint.x=GetDataInfo.CenterPoint.x+len*cos(Angle);
-// 	GetDataInfo.EndPoint.y=GetDataInfo.CenterPoint.y+len*sin(Angle);
+	double len=sqrt(float(Rel_StartPoint.x*Rel_StartPoint.x)+float(Rel_StartPoint.y*Rel_StartPoint.y));
+	Angle=atan2(float(Rel_StartPoint.y),float(Rel_StartPoint.x))+GetDataInfo.RotateAngle/Rate;
+	GetDataInfo.StartPoint.x=GetDataInfo.CenterPoint.x+len*cos(Angle);
+	GetDataInfo.StartPoint.y=GetDataInfo.CenterPoint.y+len*sin(Angle);
+	len=sqrt(float(Rel_EndPoint.x*Rel_EndPoint.x)+float(Rel_EndPoint.y*Rel_EndPoint.y));
+	Angle=atan2(float(Rel_EndPoint.y),float(Rel_EndPoint.x))+GetDataInfo.RotateAngle/Rate;
+	GetDataInfo.EndPoint.x=GetDataInfo.CenterPoint.x+len*cos(Angle);
+	GetDataInfo.EndPoint.y=GetDataInfo.CenterPoint.y+len*sin(Angle);
 
 	SelObjList[0].SelDataInfo=GetDataInfo;
 	DataArray[GetIndex]=GetDataInfo;
