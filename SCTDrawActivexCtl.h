@@ -624,6 +624,7 @@ private:
 	IManipulationProcessor* manipulationProc;
 	// Keeps track of the number contacts being processed
 	unsigned int m_uNumContacts;
+	BOOL m_bInObject;
 };
 
 //{{AFX_INSERT_LOCATION}}

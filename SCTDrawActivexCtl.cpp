@@ -375,6 +375,7 @@ CSCTDrawActivexCtrl::CSCTDrawActivexCtrl():
 
 	/////////////////////////////////////////////////////////////////////////////////
 	m_uNumContacts = 0;
+	m_bInObject = FALSE;
 	m_object = new (std::nothrow) CCoreObject(pEdit->GetSafeHwnd(), 0);
 
 	if(m_object != NULL)
@@ -10131,10 +10132,20 @@ void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	int x = inData->x;
 	int y = inData->y;
 	BOOL success = TRUE;
-	CPoint StartPoint = SelObjList[0].SelDataInfo.StartPoint;
-	CPoint EndPoint = SelObjList[0].SelDataInfo.EndPoint;
+	CPoint StartPoint, EndPoint;
 
-
+	std::vector<SelObj>::iterator iter = SelObjList.begin();
+	if (iter != SelObjList.end())
+	{
+		StartPoint = iter->SelDataInfo.StartPoint;
+		EndPoint = iter->SelDataInfo.EndPoint;
+	}
+	else
+	{
+		m_bInObject = FALSE;
+		return;
+	}
+	
 	//TODO:
 	if(/*x > StartPoint.x && x < EndPoint.x && y > StartPoint.y && y < EndPoint.y*/1)
 	{
@@ -10143,7 +10154,10 @@ void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 		if (!success)
 		{
 			coRef->manipulationProc->CompleteManipulation();
+			m_bInObject = FALSE;
+			return;
 		}
+		m_bInObject = TRUE;
 	}
 }
 
@@ -10154,14 +10168,29 @@ void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	int x = (inData->x);
 	int y = (inData->y);
 
+	if (!m_bInObject)
+	{
+		return;
+	}
+
 	coRef->manipulationProc->ProcessMoveWithTime(dwCursorID, (FLOAT)x, (FLOAT)y, dwPTime);
 	float dx    = coRef->manipulationEventSink->dx;
 	float dy    = coRef->manipulationEventSink->dy;
 	float Angle = coRef->manipulationEventSink->Angle;
 	float Scale = coRef->manipulationEventSink->Scale;
 
-	DataInfo GetDataInfo=SelObjList[0].SelDataInfo;
-	int GetIndex=SelObjList[0].Index;
+	DataInfo GetDataInfo;
+	int GetIndex;
+	std::vector<SelObj>::iterator iter = SelObjList.begin();
+	if (iter != SelObjList.end())
+	{
+		GetDataInfo = iter->SelDataInfo;
+		GetIndex    = iter->Index;
+	}
+	else
+	{
+		return;
+	}
 	
 	GetDataInfo.CenterPoint.x += dx;
 	GetDataInfo.CenterPoint.y += dy;
@@ -10170,6 +10199,12 @@ void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	GetDataInfo.RotateAngle=fmod(GetDataInfo.RotateAngle,360);
 	GetDataInfo.xScale *= Scale;
 	GetDataInfo.yScale *= Scale;
+
+	GetDataInfo.xScale = (GetDataInfo.xScale > 2) ? 2 : GetDataInfo.xScale;
+	GetDataInfo.yScale = (GetDataInfo.yScale > 2) ? 2 : GetDataInfo.yScale;
+
+	GetDataInfo.xScale = (GetDataInfo.xScale < 0.5) ? 0.5 : GetDataInfo.xScale;
+	GetDataInfo.yScale = (GetDataInfo.yScale < 0.5) ? 0.5 : GetDataInfo.yScale;
 
 	double len=sqrt(float(Rel_StartPoint.x*Rel_StartPoint.x)+float(Rel_StartPoint.y*Rel_StartPoint.y));
 	Angle=atan2(float(Rel_StartPoint.y),float(Rel_StartPoint.x))+GetDataInfo.RotateAngle/Rate;
@@ -10190,8 +10225,7 @@ void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	SelectClipRgn(memDC->m_hDC,NULL);
 	BitBlt(hDC,0,0,WindowRect.right,WindowRect.bottom,memDC->m_hDC,0,0,SRCCOPY);
 	////////////////////////////////////////////
-	UndoDataInfo=GetDataInfo;	
-	
+	UndoDataInfo=GetDataInfo;		
 }
 
 void CSCTDrawActivexCtrl::UpEvent(CCoreObject* coRef, const TOUCHINPUT* inData)
@@ -10201,7 +10235,13 @@ void CSCTDrawActivexCtrl::UpEvent(CCoreObject* coRef, const TOUCHINPUT* inData)
 	int x = (inData->x);
 	int y = (inData->y);
 
+	if (!m_bInObject)
+	{
+		return;
+	}
+
 	coRef->manipulationProc->ProcessUpWithTime(dwCursorID, (FLOAT)x, (FLOAT)y, dwPTime);
+	m_bInObject = FALSE;
 }
 
 void CSCTDrawActivexCtrl::ProcessChanges()
