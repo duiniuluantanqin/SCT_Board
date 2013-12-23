@@ -10064,6 +10064,10 @@ void CSCTDrawActivexCtrl::OnGesture(WPARAM wParam, LPARAM lParam)
 	{
 		if(GetTouchInputInfo(hInput, iNumContacts, pInputs, sizeof(TOUCHINPUT)))
 		{
+			char str[100];
+			sprintf(str, "iNumContacts:%d\r\n", iNumContacts);
+			SaveToFile(str);
+
 			for(int i = 0; i < iNumContacts; i++)
 			{
 				ptInputs.x = pInputs[i].x/100;	
@@ -10147,7 +10151,64 @@ void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	}
 	
 	//TODO:
-	if(/*x > StartPoint.x && x < EndPoint.x && y > StartPoint.y && y < EndPoint.y*/1)
+	Matrix matrix;
+	CRgn InitRgn;
+	InitRgn.CreateRectRgn(0,0,0,0);
+	HRGN hRgn=InitRgn.operator HRGN();
+	Graphics graphics(hDC);
+
+	switch(DataArray[0].OperationKind)
+	{
+	case 0:
+		pbUnit=pbLineUnit;
+		break;
+	case 1:
+		pbUnit=pbRectUnit;
+		break;
+	case 2:
+		pbUnit=pbRoundRectUnit;
+		break;
+	case 3:
+		pbUnit=pbEllipseUnit;
+		break;
+	case 4:
+		pbUnit=pbArcUnit;
+		break;
+	case 5:
+		pbUnit=pbSectorUnit;
+		break;
+	case 6:
+		pbUnit=pbPenBrushUnit;
+		break;
+	case 7:
+		pbUnit=pbPolylineUnit;
+		break;
+	case 8:
+		pbUnit=pbTextUnit;
+		break;
+	case 9:
+		pbUnit=pbBmpUnit;
+		break;
+	case 10:
+		pbUnit=pbCombination;
+		break;
+	case 11:
+		pbUnit=pbPolygonUnit;
+		break;
+	case 12:
+		pbUnit=pbRgnObjUnit;
+		break;
+	}
+
+	hRgn=pbUnit->GetRedrawHRGN(hDC,DataArray,DataArray[0]);
+	Region Rgn(hRgn);	 
+	matrix.Translate(DataArray[0].CenterPoint.x,DataArray[0].CenterPoint.y);
+	matrix.Rotate(DataArray[0].RotateAngle);
+	matrix.Scale(DataArray[0].xScale,DataArray[0].yScale);
+	Rgn.Transform(&matrix);
+	matrix.Reset();
+
+	if(Rgn.IsVisible(PointF(x,y),&graphics))
 	{
 		// Feed values to the Manipulation Processor
 		success = SUCCEEDED(coRef->manipulationProc->ProcessDownWithTime(dwCursorID, (FLOAT)x, (FLOAT)y, dwPTime));
@@ -10155,10 +10216,12 @@ void CSCTDrawActivexCtrl::DownEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 		{
 			coRef->manipulationProc->CompleteManipulation();
 			m_bInObject = FALSE;
+			DeleteObject(hRgn);
 			return;
 		}
 		m_bInObject = TRUE;
 	}
+	DeleteObject(hRgn);
 }
 
 void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData)
@@ -10178,6 +10241,10 @@ void CSCTDrawActivexCtrl::MoveEvent(CCoreObject* coRef, const TOUCHINPUT* inData
 	float dy    = coRef->manipulationEventSink->dy;
 	float Angle = coRef->manipulationEventSink->Angle;
 	float Scale = coRef->manipulationEventSink->Scale;
+
+	char str[1111];
+	sprintf(str, "Angle: %f,  Scale:  %f\r\n", Angle, Scale);
+	SaveToFile(str);
 
 	DataInfo GetDataInfo;
 	int GetIndex;
