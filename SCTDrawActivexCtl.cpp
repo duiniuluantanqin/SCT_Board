@@ -42,14 +42,6 @@ static void SaveToFile(LPSTR str)
 	CloseHandle(hdl);
 }
 
-static VOID FillInputData(TOUCHINPUT* inData, DWORD cursor, DWORD eType, DWORD time, int x, int y)
-{
-	inData->dwID = cursor;
-	inData->dwFlags = eType;
-	inData->dwTime = time;
-	inData->x = x;
-	inData->y = y;
-}
 /////////////////////temp////////////////////////
 
 IMPLEMENT_DYNCREATE(CSCTDrawActivexCtrl, COleControl)
@@ -392,7 +384,7 @@ CSCTDrawActivexCtrl::~CSCTDrawActivexCtrl()
 {
 	// TODO: Cleanup your control's instance data here.
 	GdiplusShutdown(m_GdiplusToken);
-	//UnregisterTouchWindow();
+	UnregisterTouchWindow(pEdit->GetSafeHwnd());
 
 	/*delete pbUnit;
 	delete pbLineUnit;
@@ -10039,6 +10031,7 @@ LRESULT CSCTDrawActivexCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lPar
 		}	
 		return 0;
 	}
+
 	return COleControl::WindowProc(message, wParam, lParam);
 		
 }
@@ -10308,7 +10301,7 @@ void CSCTDrawActivexCtrl::UpEvent(CCoreObject* coRef, const TOUCHINPUT* inData)
 	}
 
 	coRef->manipulationProc->ProcessUpWithTime(dwCursorID, (FLOAT)x, (FLOAT)y, dwPTime);
-	m_bInObject = FALSE;
+	//m_bInObject = FALSE;
 }
 
 void CSCTDrawActivexCtrl::ProcessChanges()
